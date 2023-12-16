@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "movie-recommendation-sys"
+  },
+  "targets": {
+    "movie-recommendation-sys": {
+      "hosting": {
+        "shifts-ui": [
+          "florentine-volunteering"
+        ]
+      }
+    }
+  }
+}

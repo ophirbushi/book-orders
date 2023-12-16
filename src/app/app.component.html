@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+    <span role="button" [routerLink]="['/']">משמרות</span>
+    <span style="flex: 1 1;"></span>
+    <button mat-icon-button (click)="openImportDialog()">
+        <mat-icon>add</mat-icon>
+    </button>
+</mat-toolbar>
+
+<div class="container-fluid">
+    <router-outlet></router-outlet>
+</div>
