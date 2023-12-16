@@ -52,6 +52,7 @@ export class HomeComponent {
             filter: 'agTextColumnFilter',
             menuTabs: ['filterMenuTab'],
         },
+
         rowSelection: 'multiple'
     }
     columnDefs: ColDef<any>[] = [
