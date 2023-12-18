@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "shifts-ui": {
+    "book-orders": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -41,7 +41,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/shifts-ui",
+            "outputPath": "dist/book-orders",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -91,10 +91,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "shifts-ui:build:production"
+              "browserTarget": "book-orders:build:production"
             },
             "development": {
-              "browserTarget": "shifts-ui:build:development"
+              "browserTarget": "book-orders:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -102,14 +102,14 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "shifts-ui:build"
+            "browserTarget": "book-orders:build"
           }
         },
         "deploy": {
           "builder": "@angular/fire:deploy",
           "options": {
             "version": 2,
-            "browserTarget": "shifts-ui:build:production"
+            "browserTarget": "book-orders:build:production"
           }
         }
       }
