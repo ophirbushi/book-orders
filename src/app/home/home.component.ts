@@ -1,40 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component } from '@angular/core'
-import { AssignmentExtended, StateService } from '../shared/state.service'
-import { ColDef, GridOptions, ICellRendererParams } from 'ag-grid-community'
-import { AgRendererComponent } from 'ag-grid-angular'
-import { MatIconModule } from '@angular/material/icon'
-import { MatButtonModule } from '@angular/material/button'
-
-@Component({
-    template: `      
-      <button mat-button (click)="onClick()">מחק</button>
-    `,
-    standalone: true,
-    imports: [MatIconModule, MatButtonModule]
-})
-class DeleteButtonCellRenderer implements AgRendererComponent {
-    params!: ICellRendererParams
-
-    constructor(private state: StateService) { }
-
-    agInit(params: ICellRendererParams): void {
-        this.params = params
-    }
-
-    refresh(): boolean {
-        return true
-    }
-
-    onClick() {
-        const assignmentExtended = this.params.node.data as AssignmentExtended
-        const assignments = this.state.assignments.value.filter(
-            assignment => assignment.assignmentId !== assignmentExtended.assignmentId
-        )
-        this.state.assignments.next(assignments)
-        this.state.persistAssignments(assignments)
-    }
-}
+import { StateService } from '../shared/state.service'
+import { ColDef, GridOptions } from 'ag-grid-community'
 
 @Component({
     selector: 'app-home',
@@ -42,9 +9,6 @@ class DeleteButtonCellRenderer implements AgRendererComponent {
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-    institutions$ = this.state.institutions
-    volunteers$ = this.state.volunteers
-    assignmentsExtended$ = this.state.assignmentsExtended$
     gridOptions: GridOptions = {
         enableRtl: true,
         defaultColDef: {
@@ -52,7 +16,6 @@ export class HomeComponent {
             filter: 'agTextColumnFilter',
             menuTabs: ['filterMenuTab'],
         },
-
         rowSelection: 'multiple'
     }
     columnDefs: ColDef<any>[] = [

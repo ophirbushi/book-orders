@@ -1,7 +1,7 @@
 {
   "hosting": [
     {
-      "public": "dist/shifts-ui",
+      "public": "dist/book-orders",
       "site": "florentine-volunteering",
       "ignore": [
         "firebase.json",
