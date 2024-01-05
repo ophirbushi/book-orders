@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { StateService } from '../shared/state.service'
 import { ColDef, GridOptions } from 'ag-grid-community'
 
 @Component({
@@ -10,6 +9,7 @@ import { ColDef, GridOptions } from 'ag-grid-community'
 export class WorkersComponent {
   gridOptions: GridOptions = {
     enableRtl: true,
+    animateRows: true,
     defaultColDef: {
         sortable: true,
         filter: 'agTextColumnFilter',
@@ -37,6 +37,4 @@ export class WorkersComponent {
       { firstName: 'חגית', lastName: 'מיכאל', phone: '054-1112234', email: 'hm@gmail.com', wid: 7, lastActive: Date.now()  },
       { firstName: 'צחי', lastName: 'שי', phone: '054-1112234', email: 'ts@gmail.com' , wid: 8, lastActive: Date.now() }
   ]
-
-  constructor(private state: StateService) { }
 }
