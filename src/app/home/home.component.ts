@@ -24,19 +24,23 @@ export class HomeComponent {
         { field: 'phone', headerName: 'טלפון' },
         { field: 'email', headerName: 'דוא"ל' },
         { field: 'quantity', headerName: 'כמות' },
+        { field: 'uid', headerName: 'uid' },
+        { field: 'order', headerName: 'הזמנה' },
+        { field: 'suspicious', headerName: 'חשוד'},
+        { field: 'blacklist', headerName: 'חסום'},
         { field: 'status', headerName: 'תהליך הסתיים' },
         { headerName: 'עוד מידע', cellRenderer: () => `<button class="btn btn-secondary">?</button>` }
     ]
     rowData = [
-        { firstName: 'יונתן', lastName: 'איתמר', phone: '054-1112234', email: 'yi@gmail.com', quantity: 4, status: true },
-        { firstName: 'חגית', lastName: 'מיכאל', phone: '054-1112234', email: 'hm@gmail.com', quantity: 12, status: false },
-        { firstName: 'צחי', lastName: 'שי', phone: '054-1112234', email: 'ts@gmail.com', quantity: 9, status: true },
-        { firstName: 'יונתן', lastName: 'איתמר', phone: '054-1112234', email: 'yi@gmail.com', quantity: 4, status: false },
-        { firstName: 'חגית', lastName: 'מיכאל', phone: '054-1112234', email: 'hm@gmail.com', quantity: 12, status: true },
-        { firstName: 'צחי', lastName: 'שי', phone: '054-1112234', email: 'ts@gmail.com', quantity: 9, status: false },
-        { firstName: 'יונתן', lastName: 'איתמר', phone: '054-1112234', email: 'yi@gmail.com', quantity: 4, status: false },
-        { firstName: 'חגית', lastName: 'מיכאל', phone: '054-1112234', email: 'hm@gmail.com', quantity: 12, status: false },
-        { firstName: 'צחי', lastName: 'שי', phone: '054-1112234', email: 'ts@gmail.com', quantity: 9, status: true },
+        { firstName: 'יונתן', lastName: 'איתמר', phone: '054-1112234', email: 'yi@gmail.com', quantity: 4,uid: 0, order: 'ברית חדשה', suspicious: false, blacklist: false,  status: true },
+        { firstName: 'חגית', lastName: 'מיכאל', phone: '054-1112234', email: 'hm@gmail.com', quantity: 12,uid: 1, order: 'ברית חדשה', suspicious: false, blacklist: false,  status: false },
+        { firstName: 'צחי', lastName: 'שי', phone: '054-1112234', email: 'ts@gmail.com', quantity: 9,uid: 2, order: 'ברית חדשה', suspicious: false, blacklist: false,  status: true },
+        { firstName: 'יונתן', lastName: 'איתמר', phone: '054-1112234', email: 'yi@gmail.com', quantity: 4,uid: 3, order: 'ברית חדשה', suspicious: false, blacklist: true,  status: false },
+        { firstName: 'חגית', lastName: 'מיכאל', phone: '054-1112234', email: 'hm@gmail.com', quantity: 12,uid: 4, order: 'ברית חדשה', suspicious: false, blacklist: false,  status: true },
+        { firstName: 'צחי', lastName: 'שי', phone: '054-1112234', email: 'ts@gmail.com', quantity: 9,uid: 5, order: 'ברית חדשה', suspicious: false, blacklist: false,  status: false },
+        { firstName: 'יונתן', lastName: 'איתמר', phone: '054-1112234', email: 'yi@gmail.com', quantity: 4,uid: 6, order: 'ברית חדשה', suspicious: true, blacklist: false,  status: false },
+        { firstName: 'חגית', lastName: 'מיכאל', phone: '054-1112234', email: 'hm@gmail.com', quantity: 12,uid: 7, order: 'ברית חדשה', suspicious: false, blacklist: false,  status: false },
+        { firstName: 'צחי', lastName: 'שי', phone: '054-1112234', email: 'ts@gmail.com', quantity: 9, uid: 8, order: 'ברית חדשה', suspicious: false, blacklist: false, status: true },
     ]
 
     constructor(private state: StateService) { }

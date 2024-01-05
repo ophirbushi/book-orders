@@ -20,6 +20,7 @@ import { StateService } from './shared/state.service'
         BrowserModule,
         RouterModule.forRoot([
             { path: '', pathMatch: 'full', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+            { path: 'workers', loadChildren: () => import('./workers/workers.module').then(m => m.WorkersModule) },
         ]),
         BrowserAnimationsModule,
         MatToolbarModule,
