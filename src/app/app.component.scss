@@ -1,0 +1,9 @@
+mat-toolbar {
+    div {
+        display: flex;
+        gap: 1rem;
+        span[role="button"] {
+            border: 1px solid red;
+        }
+    }
+}

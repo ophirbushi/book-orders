@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component'
 import { RouterModule } from '@angular/router'
 import { MatCardModule } from '@angular/material/card'
 import { AgGridModule } from 'ag-grid-angular'
+import { DatagridHeaderModule } from '../datagrid-header/datagrid-header.module'
 
 
 
@@ -15,7 +16,8 @@ import { AgGridModule } from 'ag-grid-angular'
         CommonModule,
         RouterModule.forChild([{ path: '', component: HomeComponent }]),
         MatCardModule,
-        AgGridModule
+        AgGridModule,
+        DatagridHeaderModule
     ]
 })
 export class HomeModule { }
