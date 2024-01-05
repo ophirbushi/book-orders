@@ -1,8 +1,8 @@
 <div>
-    <select>
-        <option>show all</option>
-        <option>show active</option>
-        <option>show finished</option>
+    <select *ngIf="show_filter" (change)="onChange($event)">
+        <option value="all">show all</option>
+        <option value="active">show active</option>
+        <option value="finished">show finished</option>
     </select>
     <select>
         <option>send email to all selected</option>

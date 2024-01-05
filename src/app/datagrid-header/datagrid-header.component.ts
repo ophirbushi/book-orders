@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { StateService } from '../shared/state.service'
 
 @Component({
@@ -7,5 +7,12 @@ import { StateService } from '../shared/state.service'
   styleUrls: ['./datagrid-header.component.scss']
 })
 export class DatagridHeaderComponent {
+  @Input() show_filter: boolean | undefined = false;
 
+  constructor(private state: StateService) {}
+  
+  onChange($event: any) {
+    if (!$event.target) return;
+    this.state.setFilterValue($event.target.value);
+  }
 }
