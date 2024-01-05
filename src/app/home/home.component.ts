@@ -27,7 +27,6 @@ export class HomeComponent {
         { field: 'status', headerName: 'תהליך הסתיים' },
         { headerName: 'עוד מידע', cellRenderer: () => `<button class="btn btn-secondary">?</button>` }
     ]
-
     rowData = [
         { firstName: 'יונתן', lastName: 'איתמר', phone: '054-1112234', email: 'yi@gmail.com', quantity: 4, status: true },
         { firstName: 'חגית', lastName: 'מיכאל', phone: '054-1112234', email: 'hm@gmail.com', quantity: 12, status: false },
