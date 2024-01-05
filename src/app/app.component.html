@@ -1,8 +1,32 @@
-<mat-toolbar color="primary">
-    <span role="button" [routerLink]="['/']">הזמנות</span>
-    <span style="flex: 1 1;"></span>
+<mat-toolbar color="primary" [ngSwitch]="userType">
+    <div *ngSwitchCase="'admin'">
+        <span role="button" [routerLink]="['/']">💬שלח הודעה למנהל</span>
+        <span role="button" [routerLink]="['/']">צריך עזרה מאיתנו?💬</span>
+        <span role="button" [routerLink]="['/']">דווח על באג 🐞</span>
+        <span role="button" [routerLink]="['/']">בחר שפה</span>
+        <span role="button" [routerLink]="['/']">7 הודעות חדשות</span>
+        <span role="button" [routerLink]="['/']">משתמש</span>
+        <span style="flex: 1 1"></span>
+    </div>
+    <div *ngSwitchCase="'worker'">
+        <span role="button" [routerLink]="['/']">All</span>
+        <span role="button" [routerLink]="['/']">Suspects</span>
+        <span role="button" [routerLink]="['/']">Blacklist</span>
+        <span role="button" [routerLink]="['/']">Workers</span>
+        <span role="button" [routerLink]="['/']">צריך עזרה מאיתנו?💬</span>
+        <span role="button" [routerLink]="['/']">דווח על באג 🐞</span>
+        <span role="button" [routerLink]="['/']">בחר שפה</span>
+        <span role="button" [routerLink]="['/']">7 הודעות חדשות</span>
+        <span role="button" [routerLink]="['/']">משתמש</span>
+        <span style="flex: 1 1"></span>
+    </div>
+    <div *ngSwitchDefault>
+        <p>for some wierd reason you are not a worker or an admin
+        what are you? who are you? WHERE ARE YOU? WE ARE COMING FOR YOU!
+        (just kidding lol)</p>
+    </div>
 </mat-toolbar>
 
 <div class="container-fluid">
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
