@@ -1,12 +1,12 @@
 {
   "projects": {
-    "default": "movie-recommendation-sys"
+    "default": "book-orders"
   },
   "targets": {
-    "movie-recommendation-sys": {
+    "book-orders": {
       "hosting": {
-        "shifts-ui": [
-          "florentine-volunteering"
+        "book-orders": [
+          "book-orders"
         ]
       }
     }

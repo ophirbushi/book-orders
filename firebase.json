@@ -2,7 +2,7 @@
   "hosting": [
     {
       "public": "dist/book-orders",
-      "site": "florentine-volunteering",
+      "site": "book-orders",
       "ignore": [
         "firebase.json",
         "**/.*",

@@ -13,34 +13,33 @@ import { appInit } from './app.init'
 import { StateService } from './shared/state.service'
 
 @NgModule({
-    declarations: [
-        AppComponent
-    ],
-    imports: [
-        BrowserModule,
-        RouterModule.forRoot([
-            { path: '', pathMatch: 'full', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
-        ]),
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        MatButtonModule,
-        MatIconModule,
-        MatDialogModule,
-        provideFirebaseApp(() => initializeApp({
-            projectId: 'movie-recommendation-sys',
-            appId: '1:54517771672:web:57e2f58fd4656483574fed',
-            databaseURL: 'https://movie-recommendation-sys.firebaseio.com',
-            storageBucket: 'movie-recommendation-sys.appspot.com',
-            locationId: 'us-central',
-            apiKey: 'AIzaSyDKWONSTgeEHLpqFMTUuMSvBPlM88PWtIM',
-            authDomain: 'movie-recommendation-sys.firebaseapp.com',
-            messagingSenderId: '54517771672'
-        } as FirebaseOptions)),
-        provideDatabase(() => getDatabase())
-    ],
-    providers: [
-        { provide: APP_INITIALIZER, multi: true, useFactory: appInit, deps: [StateService] }
-    ],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot([
+      { path: '', pathMatch: 'full', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+    ]),
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDialogModule,
+    provideFirebaseApp(() => initializeApp({
+      apiKey: "AIzaSyBrfu3dY8mEX5_o-zJfI6ZQIpe8If8rTaQ",
+      authDomain: "book-orders-449e1.firebaseapp.com",
+      databaseURL: "https://book-orders-449e1-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "book-orders-449e1",
+      storageBucket: "book-orders-449e1.appspot.com",
+      messagingSenderId: "378275388001",
+      appId: "1:378275388001:web:5e591215023f96df262820"
+    } as FirebaseOptions)),
+    provideDatabase(() => getDatabase())
+  ],
+  providers: [
+    { provide: APP_INITIALIZER, multi: true, useFactory: appInit, deps: [StateService] }
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
